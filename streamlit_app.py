@@ -3,7 +3,8 @@ import inspect
 import streamlit as st
 from htbuilder import details, div, p, styles, summary
 
-st.title("▸ Toggle!")
+st.set_page_config(page_icon="▸", page_title="Stoggle")
+st.title("▸ Stoggle!")
 
 def stoggle(title: str, text: str):
     """
