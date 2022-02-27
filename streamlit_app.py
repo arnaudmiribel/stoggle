@@ -1,18 +1,19 @@
 import inspect
 
 import streamlit as st
-from htbuilder import details, div, p, styles, summary
+from htbuilder import details, div, p, styles
+from htbuilder import summary as smry
 
 st.set_page_config(page_icon="▸", page_title="Stoggle")
 st.title("▸ Stoggle!")
 
-def stoggle(title: str, text: str):
+def stoggle(summary: str, content: str):
     """
     Displays a toggle widget in Streamlit
 
     Args:
-        title (str): Summary of the toggle (always shown)
-        text (str): Content shown after toggling
+        summary (str): Summary of the toggle (always shown)
+        content (str): Content shown after toggling
     """
 
     st.write(
@@ -23,7 +24,7 @@ def stoggle(title: str, text: str):
                 )
         ) 
                 (
-                    details(summary(title), p(text)
+                    details(smry(summary), p(content)
                     )
     )), 
     unsafe_allow_html=True)
